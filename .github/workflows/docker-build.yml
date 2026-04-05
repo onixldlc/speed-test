@@ -1,0 +1,21 @@
+name: Docker Build
+
+on:
+  push:
+    paths:
+      - "Dockerfile"
+  pull_request:
+    paths:
+      - "Dockerfile"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t speed-test .
