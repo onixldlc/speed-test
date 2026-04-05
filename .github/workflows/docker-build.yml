@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - "Dockerfile"
+      - ".github/workflows/docker-build.yml"
   pull_request:
     paths:
       - "Dockerfile"
+      - ".github/workflows/docker-build.yml"
 
 env:
   REGISTRY: ghcr.io
