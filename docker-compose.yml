@@ -1,3 +1,5 @@
 services:
   speed-test:
     image: ghcr.io/onixldlc/speed-test:latest
+    environment:
+      - ARGS=-c target-host -p 5201

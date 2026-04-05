@@ -1,37 +1,30 @@
 # speed-test
 
-A simple speed test for sanity check using [speedtest-cli](https://github.com/sivel/speedtest-cli).
+iperf3 in a container.
 
-## How to Use
+## Usage
 
-### Using Docker with GHCR (recommended)
-
-Pull and run the pre-built image from GHCR:
+### Docker
 
 ```bash
-docker run --rm ghcr.io/onixldlc/speed-test:latest
+docker run --rm ghcr.io/onixldlc/speed-test:latest -c <target-host>
 ```
 
-### Using Docker Compose
+### Docker Compose
+
+Set the `ARGS` environment variable in `docker-compose.yml` and run:
 
 ```bash
 docker compose run --rm speed-test
 ```
 
-### Building Locally
-
-Build the image yourself:
+### Build locally
 
 ```bash
-docker build -t speed-test .
-docker run --rm speed-test
+docker build -t speed-test ./build
+docker run --rm speed-test -c <target-host>
 ```
 
-### Running Directly
+## Args
 
-If you have Python installed, you can run it directly:
-
-```bash
-pip install speedtest-cli
-speedtest-cli
-```
+Command-line args passed to `docker run` take precedence over the `ARGS` env variable. If no command-line args are given, `ARGS` is used.
