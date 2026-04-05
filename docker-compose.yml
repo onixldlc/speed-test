@@ -1,0 +1,3 @@
+services:
+  speed-test:
+    image: ghcr.io/onixldlc/speed-test:latest
