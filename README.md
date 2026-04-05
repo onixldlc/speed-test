@@ -4,24 +4,27 @@ A simple speed test for sanity check using [speedtest-cli](https://github.com/si
 
 ## How to Use
 
-### Using Docker (recommended)
+### Using Docker with GHCR (recommended)
 
-Build the image:
-
-```bash
-docker build -t speed-test .
-```
-
-Run the speed test:
+Pull and run the pre-built image from GHCR:
 
 ```bash
-docker run --rm speed-test
+docker run --rm ghcr.io/onixldlc/speed-test:latest
 ```
 
 ### Using Docker Compose
 
 ```bash
 docker compose run --rm speed-test
+```
+
+### Building Locally
+
+Build the image yourself:
+
+```bash
+docker build -t speed-test .
+docker run --rm speed-test
 ```
 
 ### Running Directly
